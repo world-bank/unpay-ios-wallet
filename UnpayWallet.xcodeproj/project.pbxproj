@@ -85,7 +85,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2EA42CC01B2ECA98005415DB /* breadwallet copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "breadwallet copy-Info.plist"; path = "/Users/yezune/projects/worldbank/mobile/unpay-ios-wallet/breadwallet copy-Info.plist"; sourceTree = "<absolute>"; };
 		7509C10C1AF3076000D03FD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7509C10D1AF3076000D03FD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		7509C10E1AF3076100D03FD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -494,11 +493,10 @@
 		75D5F3B5191EC270004AB296 = {
 			isa = PBXGroup;
 			children = (
-				75D5F3C7191EC270004AB296 /* BreadWallet */,
-				75D5F3EC191EC270004AB296 /* BreadWalletTests */,
+				75D5F3C7191EC270004AB296 /* UnpayWallet */,
+				75D5F3EC191EC270004AB296 /* UnpayWalletTests */,
 				75D5F3C0191EC270004AB296 /* Frameworks */,
 				75D5F3BF191EC270004AB296 /* Products */,
-				2EA42CC01B2ECA98005415DB /* breadwallet copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -523,7 +521,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		75D5F3C7191EC270004AB296 /* BreadWallet */ = {
+		75D5F3C7191EC270004AB296 /* UnpayWallet */ = {
 			isa = PBXGroup;
 			children = (
 				752E289C19234A4700DB5A3C /* Models */,
@@ -540,6 +538,7 @@
 				7579F7FE19231D4600CA56F4 /* ThirdParty */,
 				75D5F3C8191EC270004AB296 /* Supporting Files */,
 			);
+			name = UnpayWallet;
 			path = BreadWallet;
 			sourceTree = "<group>";
 		};
@@ -555,13 +554,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		75D5F3EC191EC270004AB296 /* BreadWalletTests */ = {
+		75D5F3EC191EC270004AB296 /* UnpayWalletTests */ = {
 			isa = PBXGroup;
 			children = (
 				75BCC59A1946520700EC1A64 /* BreadWalletTests.h */,
 				75D5F3F2191EC270004AB296 /* BreadWalletTests.m */,
 				75D5F3ED191EC270004AB296 /* Supporting Files */,
 			);
+			name = UnpayWalletTests;
 			path = BreadWalletTests;
 			sourceTree = "<group>";
 		};
