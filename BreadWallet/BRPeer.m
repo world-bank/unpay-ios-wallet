@@ -31,15 +31,8 @@
 #import "Reachability.h"
 #import <arpa/inet.h>
 
-#define HEADER_LENGTH      24
-#define MAX_MSG_LENGTH     0x02000000u
-#define MAX_GETDATA_HASHES 50000
-#define ENABLED_SERVICES   0     // we don't provide full blocks to remote nodes
-#define PROTOCOL_VERSION   70002
-#define MIN_PROTO_VERSION  70002 // peers earlier than this protocol version not supported (need v0.9 txFee relay rules)
-#define LOCAL_HOST         0x7f000001u
-#define ZERO_HASH          [NSMutableData dataWithLength:CC_SHA256_DIGEST_LENGTH]
-#define CONNECT_TIMEOUT    3.0
+#import "WBChainParams.h"
+
 
 typedef enum {
     error = 0,
@@ -576,7 +569,7 @@ services:(uint64_t)services
         if (timestamp > now + 10*60 || timestamp < 0) timestamp = now - 5*24*60*60;
 
         // subtract two hours and add it to the list
-        [peers addObject:[[BRPeer alloc] initWithAddress:address port:port timestamp:timestamp - 2*60*60
+        [peers addObject:[[BRPeer alloc] initWithAddress:address port:port timestamp:timestamp - TWO_HOURS
          services:services]];
     }
 
@@ -722,14 +715,14 @@ services:(uint64_t)services
     // immediately, and switch to requesting blocks when we receive a header newer than earliestKeyTime
     NSTimeInterval t = [message UInt32AtOffset:l + 81*(count - 1) + 68] - NSTimeIntervalSince1970;
 
-    if (count >= 2000 || t + 7*24*60*60 >= self.earliestKeyTime - 2*60*60) {
+    if (count >= 2000 || t + SECONDS_OF_SEVEN_DAYS >= self.earliestKeyTime - TWO_HOURS) {
         NSData *firstHash = [message subdataWithRange:NSMakeRange(l, 80)].SHA256_2,
                *lastHash = [message subdataWithRange:NSMakeRange(l + 81*(count - 1), 80)].SHA256_2;
 
-        if (t + 7*24*60*60 >= self.earliestKeyTime - 2*60*60) { // request blocks for the remainder of the chain
+        if (t + SECONDS_OF_SEVEN_DAYS >= self.earliestKeyTime - TWO_HOURS) { // request blocks for the remainder of the chain
             t = [message UInt32AtOffset:l + 81 + 68] - NSTimeIntervalSince1970;
 
-            for (off = l; t > 0 && t + 7*24*60*60 < self.earliestKeyTime - 2*60*60;) {
+            for (off = l; t > 0 && t + SECONDS_OF_SEVEN_DAYS < self.earliestKeyTime - TWO_HOURS;) {
                 off += 81;
                 t = [message UInt32AtOffset:off + 81 + 68] - NSTimeIntervalSince1970;
             }

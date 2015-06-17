@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0891241B2FCD3D00078C21 /* WBChainParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0891231B2FCD3D00078C21 /* WBChainParams.m */; };
 		7525B619192453840041C0F2 /* BRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7525B618192453840041C0F2 /* BRNavigationBar.m */; };
 		752E289A192349CE00DB5A3C /* BreadWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 752E2898192349CE00DB5A3C /* BreadWallet.xcdatamodeld */; };
 		752E28AA19234AE300DB5A3C /* BRAddressEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 752E289F19234AE300DB5A3C /* BRAddressEntity.m */; };
@@ -85,6 +86,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E0891221B2FCD3D00078C21 /* WBChainParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBChainParams.h; sourceTree = "<group>"; };
+		2E0891231B2FCD3D00078C21 /* WBChainParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBChainParams.m; sourceTree = "<group>"; };
 		7509C10C1AF3076000D03FD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7509C10D1AF3076000D03FD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		7509C10E1AF3076100D03FD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -332,6 +335,8 @@
 		752E289C19234A4700DB5A3C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2E0891221B2FCD3D00078C21 /* WBChainParams.h */,
+				2E0891231B2FCD3D00078C21 /* WBChainParams.m */,
 				752E289D19234A4E00DB5A3C /* Entities */,
 				752E28B619234C3600DB5A3C /* BRKey.h */,
 				752E28B719234C3600DB5A3C /* BRKey.m */,
@@ -636,9 +641,9 @@
 		75D5F3B6191EC270004AB296 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = BR;
+				CLASSPREFIX = WB;
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = "Aaron Voisine";
+				ORGANIZATIONNAME = "world bank";
 				TargetAttributes = {
 					75001D3D1A1EE89500585F55 = {
 						CreatedOnToolsVersion = 6.1;
@@ -750,6 +755,7 @@
 				752E28D519234C3600DB5A3C /* BRPaymentRequest.m in Sources */,
 				7525B619192453840041C0F2 /* BRNavigationBar.m in Sources */,
 				75878BC1192AEC3F002505AB /* BRReceiveViewController.m in Sources */,
+				2E0891241B2FCD3D00078C21 /* WBChainParams.m in Sources */,
 				75878BBF192ACD46002505AB /* BRAmountViewController.m in Sources */,
 				759816E719357D6F005060EA /* BRBubbleView.m in Sources */,
 				75878BC6192B1AF0002505AB /* BRTxHistoryViewController.m in Sources */,

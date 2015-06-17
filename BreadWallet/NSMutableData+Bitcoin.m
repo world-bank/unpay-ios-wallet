@@ -215,10 +215,6 @@ CFAllocatorRef SecureAllocator()
     uint8_t version = *(const uint8_t *)d.bytes;
     NSData *hash = [d subdataWithRange:NSMakeRange(1, d.length - 1)];
 
-#if BITCOIN_TESTNET
-    pubkeyAddress = BITCOIN_PUBKEY_ADDRESS_TEST;
-    scriptAddress = BITCOIN_SCRIPT_ADDRESS_TEST;
-#endif
 
     if (version == pubkeyAddress) {
         [self appendUInt8:OP_DUP];

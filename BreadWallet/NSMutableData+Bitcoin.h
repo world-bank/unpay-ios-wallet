@@ -24,12 +24,7 @@
 //  THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-
-#if BITCOIN_TESTNET
-#define BITCOIN_MAGIC_NUMBER 0x0709110bu
-#else
-#define BITCOIN_MAGIC_NUMBER 0xd9b4bef9u
-#endif
+#import "WBChainParams.h"
 
 CFAllocatorRef SecureAllocator();
 

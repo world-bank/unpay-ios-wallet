@@ -183,10 +183,6 @@ int secp256k1_point_mul(void *r, const void *p, const void *i, int compressed)
     NSData *d = privateKey.base58checkToData;
     uint8_t version = BITCOIN_PRIVKEY;
     
-#if BITCOIN_TESTNET
-    version = BITCOIN_PRIVKEY_TEST;
-#endif
-    
     if (! d || d.length == 28) d = privateKey.base58ToData;
     if (d.length < SECKEY_LENGTH || d.length > SECKEY_LENGTH + 2) d = privateKey.hexToData;
     
@@ -215,10 +211,6 @@ int secp256k1_point_mul(void *r, const void *p, const void *i, int compressed)
     NSMutableData *d = [NSMutableData secureDataWithCapacity:SECKEY_LENGTH + 2];
     uint8_t version = BITCOIN_PRIVKEY;
 
-#if BITCOIN_TESTNET
-    version = BITCOIN_PRIVKEY_TEST;
-#endif
-
     [d appendBytes:&version length:1];
     [d appendData:self.seckey];
     if (self.compressed) [d appendBytes:"\x01" length:1];
@@ -246,10 +238,6 @@ int secp256k1_point_mul(void *r, const void *p, const void *i, int compressed)
 {
     NSMutableData *d = [NSMutableData secureDataWithCapacity:160/8 + 1];
     uint8_t version = BITCOIN_PUBKEY_ADDRESS;
-
-#if BITCOIN_TESTNET
-    version = BITCOIN_PUBKEY_ADDRESS_TEST;
-#endif
     
     [d appendBytes:&version length:1];
     [d appendData:self.hash160];

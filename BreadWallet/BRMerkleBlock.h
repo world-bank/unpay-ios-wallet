@@ -25,8 +25,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define BLOCK_DIFFICULTY_INTERVAL 2016      // number of blocks between difficulty target adjustments
-#define BLOCK_UNKNOWN_HEIGHT      INT32_MAX
+#import "WBChainParams.h"
 
 @interface BRMerkleBlock : NSObject
 

@@ -25,17 +25,7 @@
 
 #import <Foundation/Foundation.h>
 
-#if BITCOIN_TESTNET
-#define BITCOIN_STANDARD_PORT 18333
-#else
-#define BITCOIN_STANDARD_PORT 8333
-#endif
-
-#define BITCOIN_TIMEOUT_CODE  1001
-
-#define SERVICES_NODE_NETWORK 1 // services value indicating a node carries full blocks, not just headers
-#define USER_AGENT            [NSString stringWithFormat:@"/breadwallet:%@/",\
-                               NSBundle.mainBundle.infoDictionary[@"CFBundleShortVersionString"]]
+#import "WBChainParams.h"
 
 // explanation of message types at: https://en.bitcoin.it/wiki/Protocol_specification
 #define MSG_VERSION     @"version"
