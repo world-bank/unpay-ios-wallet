@@ -27,6 +27,7 @@
 #import <CommonCrypto/CommonDigest.h>
 
 #define RMD160_DIGEST_LENGTH (160/8)
+#define X11_DIGEST_LENGTH 64
 
 #define VAR_INT16_HEADER 0xfd
 #define VAR_INT32_HEADER 0xfe
@@ -49,6 +50,7 @@
 - (NSData *)SHA256_2;
 - (NSData *)RMD160;
 - (NSData *)hash160;
+- (NSData *)hashX11;
 - (NSData *)reverse;
 
 - (uint8_t)UInt8AtOffset:(NSUInteger)offset;

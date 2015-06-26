@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2E0891241B2FCD3D00078C21 /* WBChainParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0891231B2FCD3D00078C21 /* WBChainParams.m */; };
+		2E8C65C01B314A4500A994B5 /* blake.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65A91B314A4500A994B5 /* blake.c */; };
+		2E8C65C11B314A4500A994B5 /* bmw.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65AA1B314A4500A994B5 /* bmw.c */; };
+		2E8C65C21B314A4500A994B5 /* cubehash.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65AB1B314A4500A994B5 /* cubehash.c */; };
+		2E8C65C31B314A4500A994B5 /* echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65AC1B314A4500A994B5 /* echo.c */; };
+		2E8C65C41B314A4500A994B5 /* groestl.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65AD1B314A4500A994B5 /* groestl.c */; };
+		2E8C65C51B314A4500A994B5 /* jh.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65AE1B314A4500A994B5 /* jh.c */; };
+		2E8C65C61B314A4500A994B5 /* keccak.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65AF1B314A4500A994B5 /* keccak.c */; };
+		2E8C65C71B314A4500A994B5 /* luffa.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65B01B314A4500A994B5 /* luffa.c */; };
+		2E8C65C81B314A4500A994B5 /* shavite.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65B11B314A4500A994B5 /* shavite.c */; };
+		2E8C65C91B314A4500A994B5 /* simd.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65B21B314A4500A994B5 /* simd.c */; };
+		2E8C65CA1B314A4500A994B5 /* skein.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65B31B314A4500A994B5 /* skein.c */; };
+		2E8C65CC1B31545000A994B5 /* aes_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C65CB1B31545000A994B5 /* aes_helper.c */; };
 		7525B619192453840041C0F2 /* BRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7525B618192453840041C0F2 /* BRNavigationBar.m */; };
 		752E289A192349CE00DB5A3C /* BreadWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 752E2898192349CE00DB5A3C /* BreadWallet.xcdatamodeld */; };
 		752E28AA19234AE300DB5A3C /* BRAddressEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 752E289F19234AE300DB5A3C /* BRAddressEntity.m */; };
@@ -88,6 +100,30 @@
 /* Begin PBXFileReference section */
 		2E0891221B2FCD3D00078C21 /* WBChainParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBChainParams.h; sourceTree = "<group>"; };
 		2E0891231B2FCD3D00078C21 /* WBChainParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBChainParams.m; sourceTree = "<group>"; };
+		2E8C65A91B314A4500A994B5 /* blake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = blake.c; path = BreadWallet/libsph30/blake.c; sourceTree = "<group>"; };
+		2E8C65AA1B314A4500A994B5 /* bmw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bmw.c; path = BreadWallet/libsph30/bmw.c; sourceTree = "<group>"; };
+		2E8C65AB1B314A4500A994B5 /* cubehash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cubehash.c; path = BreadWallet/libsph30/cubehash.c; sourceTree = "<group>"; };
+		2E8C65AC1B314A4500A994B5 /* echo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = echo.c; path = BreadWallet/libsph30/echo.c; sourceTree = "<group>"; };
+		2E8C65AD1B314A4500A994B5 /* groestl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = groestl.c; path = BreadWallet/libsph30/groestl.c; sourceTree = "<group>"; };
+		2E8C65AE1B314A4500A994B5 /* jh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jh.c; path = BreadWallet/libsph30/jh.c; sourceTree = "<group>"; };
+		2E8C65AF1B314A4500A994B5 /* keccak.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = keccak.c; path = BreadWallet/libsph30/keccak.c; sourceTree = "<group>"; };
+		2E8C65B01B314A4500A994B5 /* luffa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = luffa.c; path = BreadWallet/libsph30/luffa.c; sourceTree = "<group>"; };
+		2E8C65B11B314A4500A994B5 /* shavite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = shavite.c; path = BreadWallet/libsph30/shavite.c; sourceTree = "<group>"; };
+		2E8C65B21B314A4500A994B5 /* simd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = simd.c; path = BreadWallet/libsph30/simd.c; sourceTree = "<group>"; };
+		2E8C65B31B314A4500A994B5 /* skein.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = skein.c; path = BreadWallet/libsph30/skein.c; sourceTree = "<group>"; };
+		2E8C65B41B314A4500A994B5 /* sph_blake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_blake.h; path = BreadWallet/libsph30/sph_blake.h; sourceTree = "<group>"; };
+		2E8C65B51B314A4500A994B5 /* sph_bmw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_bmw.h; path = BreadWallet/libsph30/sph_bmw.h; sourceTree = "<group>"; };
+		2E8C65B61B314A4500A994B5 /* sph_cubehash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_cubehash.h; path = BreadWallet/libsph30/sph_cubehash.h; sourceTree = "<group>"; };
+		2E8C65B71B314A4500A994B5 /* sph_echo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_echo.h; path = BreadWallet/libsph30/sph_echo.h; sourceTree = "<group>"; };
+		2E8C65B81B314A4500A994B5 /* sph_groestl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_groestl.h; path = BreadWallet/libsph30/sph_groestl.h; sourceTree = "<group>"; };
+		2E8C65B91B314A4500A994B5 /* sph_jh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_jh.h; path = BreadWallet/libsph30/sph_jh.h; sourceTree = "<group>"; };
+		2E8C65BA1B314A4500A994B5 /* sph_keccak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_keccak.h; path = BreadWallet/libsph30/sph_keccak.h; sourceTree = "<group>"; };
+		2E8C65BB1B314A4500A994B5 /* sph_luffa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_luffa.h; path = BreadWallet/libsph30/sph_luffa.h; sourceTree = "<group>"; };
+		2E8C65BC1B314A4500A994B5 /* sph_shavite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_shavite.h; path = BreadWallet/libsph30/sph_shavite.h; sourceTree = "<group>"; };
+		2E8C65BD1B314A4500A994B5 /* sph_simd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_simd.h; path = BreadWallet/libsph30/sph_simd.h; sourceTree = "<group>"; };
+		2E8C65BE1B314A4500A994B5 /* sph_skein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_skein.h; path = BreadWallet/libsph30/sph_skein.h; sourceTree = "<group>"; };
+		2E8C65BF1B314A4500A994B5 /* sph_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sph_types.h; path = BreadWallet/libsph30/sph_types.h; sourceTree = "<group>"; };
+		2E8C65CB1B31545000A994B5 /* aes_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = aes_helper.c; path = BreadWallet/libsph30/aes_helper.c; sourceTree = "<group>"; };
 		7509C10C1AF3076000D03FD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7509C10D1AF3076000D03FD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		7509C10E1AF3076100D03FD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -317,6 +353,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E8C65A81B314A0E00A994B5 /* libsph */ = {
+			isa = PBXGroup;
+			children = (
+				2E8C65CB1B31545000A994B5 /* aes_helper.c */,
+				2E8C65A91B314A4500A994B5 /* blake.c */,
+				2E8C65AA1B314A4500A994B5 /* bmw.c */,
+				2E8C65AB1B314A4500A994B5 /* cubehash.c */,
+				2E8C65AC1B314A4500A994B5 /* echo.c */,
+				2E8C65AD1B314A4500A994B5 /* groestl.c */,
+				2E8C65AE1B314A4500A994B5 /* jh.c */,
+				2E8C65AF1B314A4500A994B5 /* keccak.c */,
+				2E8C65B01B314A4500A994B5 /* luffa.c */,
+				2E8C65B11B314A4500A994B5 /* shavite.c */,
+				2E8C65B21B314A4500A994B5 /* simd.c */,
+				2E8C65B31B314A4500A994B5 /* skein.c */,
+				2E8C65B41B314A4500A994B5 /* sph_blake.h */,
+				2E8C65B51B314A4500A994B5 /* sph_bmw.h */,
+				2E8C65B61B314A4500A994B5 /* sph_cubehash.h */,
+				2E8C65B71B314A4500A994B5 /* sph_echo.h */,
+				2E8C65B81B314A4500A994B5 /* sph_groestl.h */,
+				2E8C65B91B314A4500A994B5 /* sph_jh.h */,
+				2E8C65BA1B314A4500A994B5 /* sph_keccak.h */,
+				2E8C65BB1B314A4500A994B5 /* sph_luffa.h */,
+				2E8C65BC1B314A4500A994B5 /* sph_shavite.h */,
+				2E8C65BD1B314A4500A994B5 /* sph_simd.h */,
+				2E8C65BE1B314A4500A994B5 /* sph_skein.h */,
+				2E8C65BF1B314A4500A994B5 /* sph_types.h */,
+			);
+			name = libsph;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		752E289B19234A3F00DB5A3C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +403,7 @@
 		752E289C19234A4700DB5A3C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2E8C65A81B314A0E00A994B5 /* libsph */,
 				2E0891221B2FCD3D00078C21 /* WBChainParams.h */,
 				2E0891231B2FCD3D00078C21 /* WBChainParams.m */,
 				752E289D19234A4E00DB5A3C /* Entities */,
@@ -729,6 +798,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8C65C81B314A4500A994B5 /* shavite.c in Sources */,
 				752E28AA19234AE300DB5A3C /* BRAddressEntity.m in Sources */,
 				75AA5F55194143D5003F23BD /* BRBouncyBurgerButton.m in Sources */,
 				752E28AB19234AE300DB5A3C /* BRMerkleBlockEntity.m in Sources */,
@@ -736,6 +806,8 @@
 				752E28AD19234AE300DB5A3C /* BRTransactionEntity.m in Sources */,
 				752E28AE19234AE300DB5A3C /* BRTxInputEntity.m in Sources */,
 				752E28AF19234AE300DB5A3C /* BRTxOutputEntity.m in Sources */,
+				2E8C65C91B314A4500A994B5 /* simd.c in Sources */,
+				2E8C65C61B314A4500A994B5 /* keccak.c in Sources */,
 				758DBD0E1980634900389E2A /* BRTxDetailViewController.m in Sources */,
 				7548CF3719556FD700EF827F /* BRCopyLabel.m in Sources */,
 				75767C421A0EC6F9003E7DE9 /* UIImage+Blur.m in Sources */,
@@ -743,6 +815,8 @@
 				84F68C8A1975E9E2002FC300 /* BRScanViewController.m in Sources */,
 				752E28D219234C3600DB5A3C /* BRKey+BIP38.m in Sources */,
 				752E28D919234C3600DB5A3C /* BRTransaction.m in Sources */,
+				2E8C65C21B314A4500A994B5 /* cubehash.c in Sources */,
+				2E8C65C51B314A4500A994B5 /* jh.c in Sources */,
 				752E28CE19234C3600DB5A3C /* BRBIP32Sequence.m in Sources */,
 				752E28CF19234C3600DB5A3C /* BRBIP39Mnemonic.m in Sources */,
 				752E28DA19234C3600DB5A3C /* BRWallet.m in Sources */,
@@ -753,17 +827,23 @@
 				752E28D819234C3600DB5A3C /* BRPeerManager.m in Sources */,
 				752E28D419234C3600DB5A3C /* BRPaymentProtocol.m in Sources */,
 				752E28D519234C3600DB5A3C /* BRPaymentRequest.m in Sources */,
+				2E8C65C01B314A4500A994B5 /* blake.c in Sources */,
 				7525B619192453840041C0F2 /* BRNavigationBar.m in Sources */,
 				75878BC1192AEC3F002505AB /* BRReceiveViewController.m in Sources */,
 				2E0891241B2FCD3D00078C21 /* WBChainParams.m in Sources */,
 				75878BBF192ACD46002505AB /* BRAmountViewController.m in Sources */,
 				759816E719357D6F005060EA /* BRBubbleView.m in Sources */,
 				75878BC6192B1AF0002505AB /* BRTxHistoryViewController.m in Sources */,
+				2E8C65C71B314A4500A994B5 /* luffa.c in Sources */,
 				757BE7E3192C0E9D0061CB20 /* BRRestoreViewController.m in Sources */,
 				757BE7E6192C1FF70061CB20 /* BRWelcomeViewController.m in Sources */,
+				2E8C65C41B314A4500A994B5 /* groestl.c in Sources */,
 				757BE7E9192D4E880061CB20 /* BRSeedViewController.m in Sources */,
+				2E8C65C11B314A4500A994B5 /* bmw.c in Sources */,
 				752E28E719234DA200DB5A3C /* NSData+Bitcoin.m in Sources */,
 				752E28E919234DA200DB5A3C /* NSManagedObject+Sugar.m in Sources */,
+				2E8C65CA1B314A4500A994B5 /* skein.c in Sources */,
+				2E8C65C31B314A4500A994B5 /* echo.c in Sources */,
 				752E28EA19234DA200DB5A3C /* NSMutableData+Bitcoin.m in Sources */,
 				752E28EB19234DA200DB5A3C /* NSString+Bitcoin.m in Sources */,
 				757C89521A2FCE420076B373 /* BRSettingsViewController.m in Sources */,
@@ -771,6 +851,7 @@
 				759FBB36193290F600AB4465 /* BRRootViewController.m in Sources */,
 				752E289A192349CE00DB5A3C /* BreadWallet.xcdatamodeld in Sources */,
 				759FBB37193290F600AB4465 /* BRSendViewController.m in Sources */,
+				2E8C65CC1B31545000A994B5 /* aes_helper.c in Sources */,
 				752E28F119234E8100DB5A3C /* Reachability.m in Sources */,
 				75D5F3CE191EC270004AB296 /* main.m in Sources */,
 			);

@@ -104,8 +104,12 @@
     [d appendUInt32:_timestamp];
     [d appendUInt32:_target];
     [d appendUInt32:_nonce];
-    _blockHash = d.SHA256_2;
 
+#if UNPAYCOIN_NET
+    _blockHash = d.hashX11;
+#else
+    _blockHash = d.SHA256_2;
+#endif
     return self;
 }
 

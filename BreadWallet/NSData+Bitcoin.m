@@ -26,6 +26,18 @@
 #import "NSData+Bitcoin.h"
 #import <CommonCrypto/CommonCrypto.h>
 
+#include "sph_blake.h"
+#include "sph_bmw.h"
+#include "sph_groestl.h"
+#include "sph_jh.h"
+#include "sph_keccak.h"
+#include "sph_skein.h"
+#include "sph_luffa.h"
+#include "sph_cubehash.h"
+#include "sph_shavite.h"
+#include "sph_simd.h"
+#include "sph_echo.h"
+
 // bitwise left rotation
 #define rotl(a, b) (((a) << (b)) | ((a) >> (32 - (b))))
 
@@ -116,6 +128,79 @@ static void RMD160(const void *data, size_t len, uint8_t *md)
     for (i = 0; i < sizeof(buf)/sizeof(*buf); i++) ((uint32_t *)md)[i] = CFSwapInt32HostToLittle(buf[i]); // write to md
 }
 
+static void  HashX11(const void *data, size_t len, uint8_t *md){
+    
+    
+    sph_blake512_context     ctx_blake;
+    sph_bmw512_context       ctx_bmw;
+    sph_groestl512_context   ctx_groestl;
+    sph_jh512_context        ctx_jh;
+    sph_keccak512_context    ctx_keccak;
+    sph_skein512_context     ctx_skein;
+    sph_luffa512_context     ctx_luffa;
+    sph_cubehash512_context  ctx_cubehash;
+    sph_shavite512_context   ctx_shavite;
+    sph_simd512_context      ctx_simd;
+    sph_echo512_context      ctx_echo;
+    //static unsigned char pblank[1];
+    
+    //uint512 hash[17]; /* @TODO uint512 not declared */
+    
+    NSMutableData *tmp1 = [NSMutableData dataWithLength:X11_DIGEST_LENGTH];
+    NSMutableData *tmp2 = [NSMutableData dataWithLength:X11_DIGEST_LENGTH];
+    
+    void * hash1 = tmp1.mutableBytes;
+    void * hash2 = tmp2.mutableBytes;
+    
+    
+    sph_blake512_init(&ctx_blake);
+    sph_blake512 (&ctx_blake, data, len);
+    sph_blake512_close(&ctx_blake, hash1);
+    
+    sph_bmw512_init(&ctx_bmw);
+    sph_bmw512 (&ctx_bmw, hash1, X11_DIGEST_LENGTH);
+    sph_bmw512_close(&ctx_bmw, hash2);
+    
+    sph_groestl512_init(&ctx_groestl);
+    sph_groestl512 (&ctx_groestl, hash2, X11_DIGEST_LENGTH);
+    sph_groestl512_close(&ctx_groestl, hash1);
+    
+    sph_skein512_init(&ctx_skein);
+    sph_skein512 (&ctx_skein, hash1, X11_DIGEST_LENGTH);
+    sph_skein512_close(&ctx_skein, hash2);
+    
+    sph_jh512_init(&ctx_jh);
+    sph_jh512 (&ctx_jh, hash2, X11_DIGEST_LENGTH);
+    sph_jh512_close(&ctx_jh, hash1);
+    
+    sph_keccak512_init(&ctx_keccak);
+    sph_keccak512 (&ctx_keccak, hash1, X11_DIGEST_LENGTH);
+    sph_keccak512_close(&ctx_keccak, hash2);
+    
+    sph_luffa512_init(&ctx_luffa);
+    sph_luffa512 (&ctx_luffa, hash2, X11_DIGEST_LENGTH);
+    sph_luffa512_close(&ctx_luffa, hash1);
+    
+    sph_cubehash512_init(&ctx_cubehash);
+    sph_cubehash512 (&ctx_cubehash, hash1, X11_DIGEST_LENGTH);
+    sph_cubehash512_close(&ctx_cubehash, hash2);
+    
+    sph_shavite512_init(&ctx_shavite);
+    sph_shavite512(&ctx_shavite, hash2, X11_DIGEST_LENGTH);
+    sph_shavite512_close(&ctx_shavite, hash1);
+    
+    sph_simd512_init(&ctx_simd);
+    sph_simd512 (&ctx_simd, hash1, X11_DIGEST_LENGTH);
+    sph_simd512_close(&ctx_simd, hash2);
+    
+    sph_echo512_init(&ctx_echo);
+    sph_echo512 (&ctx_echo, hash2, X11_DIGEST_LENGTH);
+    sph_echo512_close(&ctx_echo, md);
+    
+    
+    //return hash[10].trim256();
+}
+
 @implementation NSData (Bitcoin)
 
 - (NSData *)SHA1
@@ -145,7 +230,7 @@ static void RMD160(const void *data, size_t len, uint8_t *md)
 
 - (NSData *)RMD160
 {
-    NSMutableData *d = [NSMutableData dataWithLength:RMD160_DIGEST_LENGTH];
+    NSMutableData *d = [NSMutableData dataWithLength:  RMD160_DIGEST_LENGTH];
     
     RMD160(self.bytes, self.length, d.mutableBytes);
     return d;
@@ -158,6 +243,14 @@ static void RMD160(const void *data, size_t len, uint8_t *md)
     CC_SHA256(self.bytes, (CC_LONG)self.length, d.mutableBytes);
     RMD160(d.bytes, d.length, d.mutableBytes);
     d.length = RMD160_DIGEST_LENGTH;
+    return d;
+}
+
+- (NSData *)hashX11
+{
+    NSMutableData *d = [NSMutableData dataWithLength:X11_DIGEST_LENGTH];
+    HashX11(self.bytes, self.length, d.mutableBytes);
+    d.length = X11_DIGEST_LENGTH;
     return d;
 }
 

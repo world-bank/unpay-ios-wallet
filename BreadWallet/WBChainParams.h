@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define UNPAYCOIN_NET               0
+#define UNPAYCOIN_NET               1
 
 
 #if UNPAYCOIN_NET
@@ -27,7 +27,7 @@
 NSBundle.mainBundle.infoDictionary[@"CFBundleShortVersionString"]]
 
 
-#if 0
+#if 1
 
 #define TWO_HOURS                   (2*60*60)
 #define SECONDS_OF_SEVEN_DAYS       (7*24*60*60)
